@@ -13,7 +13,6 @@
 		3291F65926FF4D8C00AFD813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3291F65826FF4D8C00AFD813 /* Assets.xcassets */; };
 		3291F65C26FF4D8C00AFD813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3291F65A26FF4D8C00AFD813 /* LaunchScreen.storyboard */; };
 		3291F66426FF4E1200AFD813 /* AppBackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3291F66326FF4E1200AFD813 /* AppBackgroundTaskManager.swift */; };
-		3291F6662706ADF300AFD813 /* Silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3291F6652706ADF300AFD813 /* Silence.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		3291F65B26FF4D8C00AFD813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3291F65D26FF4D8C00AFD813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3291F66326FF4E1200AFD813 /* AppBackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundTaskManager.swift; sourceTree = "<group>"; };
-		3291F6652706ADF300AFD813 /* Silence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Silence.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +58,6 @@
 			children = (
 				3291F64F26FF4D7D00AFD813 /* AppDelegate.swift */,
 				3291F66326FF4E1200AFD813 /* AppBackgroundTaskManager.swift */,
-				3291F6652706ADF300AFD813 /* Silence.wav */,
 				3291F65326FF4D7D00AFD813 /* ViewController.swift */,
 				3291F65526FF4D7D00AFD813 /* Main.storyboard */,
 				3291F65826FF4D8C00AFD813 /* Assets.xcassets */,
@@ -129,7 +126,6 @@
 			files = (
 				3291F65C26FF4D8C00AFD813 /* LaunchScreen.storyboard in Resources */,
 				3291F65926FF4D8C00AFD813 /* Assets.xcassets in Resources */,
-				3291F6662706ADF300AFD813 /* Silence.wav in Resources */,
 				3291F65726FF4D7D00AFD813 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

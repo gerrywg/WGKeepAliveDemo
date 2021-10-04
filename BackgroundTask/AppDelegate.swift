@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var taskTimer: Timer?
 
     var window: UIWindow?
 
@@ -17,27 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-//    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-//        // Called when a new scene session is being created.
-//        // Use this method to select a configuration to create the new scene with.
-//        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-//    }
-//
-//    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-//        // Called when the user discards a scene session.
-//        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-//        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-//    }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        AppBackgroundTaskManager.shared.startBackgroundTask(app: application)
+        // 调用申请后台保活
+        AppBackgroundTaskManager.shared.startToApplyTimeForBackgroundTask()
+        
+        // 测试代码，打印看一下后台保活或者模拟后台干一些其他事情。
+        // 说明: 后台保活就是上面的AppBackgroundTaskManager.shared.startApplyBackgroundTask()
+        // 而在后台干事情，不一定非要这个位置写代码。可以在项目的任何位置，如在某个页面发起一些网络请求。
+        doSomethingInBackground()
+    }
+    
+    func doSomethingInBackground() {
+        // 后台做一些事情
+        taskTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
+            print("doing some thing:\(UIApplication.shared.backgroundTimeRemaining)")
+        }
+    }
+    
+    func stopDoingSomethingInBackgroud() -> () {
+        taskTimer?.invalidate()
+        taskTimer = nil
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        AppBackgroundTaskManager.shared.stopBackgroundTask()
+        stopDoingSomethingInBackgroud()
     }
 
 
