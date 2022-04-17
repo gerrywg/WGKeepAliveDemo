@@ -49,27 +49,27 @@ class AppBackgroundTaskManager: NSObject {
                 self.bgTask = UIBackgroundTaskIdentifier.invalid
                 self.applyForMoreTime()
             })
-//            let path = Bundle.main.path(forResource: "Silence", ofType: "wav")!
-//            let filePathUrl = NSURL.init(fileURLWithPath: path)
-//
-//            do {
-//                try AVAudioSession.sharedInstance()
-//                    .setCategory(.playback,
-//                                 mode: .default,
-//                                 policy: .default,
-//                                 options: .mixWithOthers)
-//            } catch  {
-//
+            let path = Bundle.main.path(forResource: "Silence", ofType: "wav")!
+            let filePathUrl = NSURL.init(fileURLWithPath: path)
+
+            do {
+                try AVAudioSession.sharedInstance()
+                    .setCategory(.playback,
+                                 mode: .default,
+                                 policy: .default,
+                                 options: .mixWithOthers)
+            } catch  {
+
+            }
+            self.audioPlayer = try? AVAudioPlayer(contentsOf: filePathUrl as URL)
+            self.audioEngine.reset()
+            self.audioPlayer.play()
+
+//            if let task = self.bgTask {
+//                self.app.endBackgroundTask(task)
 //            }
-//            self.audioPlayer = try? AVAudioPlayer(contentsOf: filePathUrl as URL)
-//            self.audioEngine.reset()
-//            self.audioPlayer.play()
-//
-////            if let task = self.bgTask {
-////                self.app.endBackgroundTask(task)
-////            }
-//
-//            self.audioPlayer.stop()
+
+            self.audioPlayer.stop()
         }
     }
     @objc func doSomething() {
